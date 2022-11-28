@@ -4,8 +4,8 @@
 #include "HTTPClient.h"
 
 // Set your Wi-Fi SSID and Password
-const char *ssid = "HUAWEI-801";
-const char *password = "jiaobaba233";
+const char *ssid = "YOUR_WIFI_SSID";
+const char *password = "YOUR_WIFI_PASSWORD";
 
 // Your Domain name with URL path or IP address with path
 String serverName = "http://192.168.10.106:8001/test";
