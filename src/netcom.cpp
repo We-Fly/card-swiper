@@ -13,11 +13,13 @@ void initWiFi()
     WiFi.onEvent(WiFiGotIP, WiFiEvent_t::ARDUINO_EVENT_WIFI_STA_GOT_IP);
     WiFi.onEvent(WiFiStationDisconnected, WiFiEvent_t::ARDUINO_EVENT_WIFI_STA_DISCONNECTED);
 
+    #if USE_STATIC_IP
     // Configures static IP address
     if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS))
     {
         Serial.println("STA Failed to configure");
     }
+    #endif
 
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);

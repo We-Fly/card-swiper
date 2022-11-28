@@ -42,7 +42,7 @@ void pn532Init(void) {
   Serial.println("Waiting for an ISO14443A card");
 }
 
-void pn532Scan(void) {
+boolean pn532Scan(void) {
   boolean success;
   uint8_t uid[] = { 0, 0, 0, 0, 0, 0, 0 };	// Buffer to store the returned UID
   uint8_t uidLength;				// Length of the UID (4 or 7 bytes depending on ISO14443A card type)
@@ -50,7 +50,7 @@ void pn532Scan(void) {
   // Wait for an ISO14443A type cards (Mifare, etc.).  When one is found
   // 'uid' will be populated with the UID, and uidLength will indicate
   // if the uid is 4 bytes (Mifare Classic) or 7 bytes (Mifare Ultralight)
-  success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, &uid[0], &uidLength);
+  success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, &uid[0], &uidLength, 100);
   
   if (success) {
     Serial.println("Found a card!");
@@ -62,12 +62,25 @@ void pn532Scan(void) {
     }
     Serial.println("");
     sendID(uid, uidLength);
-	// Wait 1 second before continuing
-	delay(1000);
+	  // Wait 1 second before continuing
+	  // delay(1000);
+    ledcWriteTone(channel, 2000);
+    ledcWrite(channel, 128);
+    vTaskDelay(200);
+    ledcWrite(channel, 0);
+    for (int i=0;i<8;i++)
+    {
+      digitalWrite(CARD_LED, HIGH);
+      vTaskDelay(100);
+      digitalWrite(CARD_LED, LOW);
+      vTaskDelay(100);
+    }
+    return true;
   }
   else
   {
     // PN532 probably timed out waiting for a card
-    Serial.println("Timed out waiting for a card");
+    // Serial.println("Timed out waiting for a card");
+    return false;
   }
 }
