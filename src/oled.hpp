@@ -1,5 +1,5 @@
-#ifndef OLED_H_
-#define OLED_H_
+#ifndef OLED_HPP_
+#define OLED_HPP_
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>

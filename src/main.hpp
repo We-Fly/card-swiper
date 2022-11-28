@@ -1,13 +1,13 @@
-#ifndef MAIN_H_
-#define MAIN_H_
+#ifndef MAIN_HPP_
+#define MAIN_HPP_
 
 #include <Arduino.h>
 #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_PN532.h>
-#include "pn532.h"
-#include "netcom.h"
-#include "oled.h"
+#include "pn532.hpp"
+#include "netcom.hpp"
+#include "oled.hpp"
 
 // #define I2C_Freq 100000
 

@@ -1,5 +1,5 @@
-#ifndef NETCONFIG_H_
-#define NETCONFIG_H_
+#ifndef NETCONFIG_HPP_
+#define NETCONFIG_HPP_
 
 #include "HTTPClient.h"
 

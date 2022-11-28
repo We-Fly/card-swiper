@@ -1,10 +1,10 @@
-#ifndef PN532_H_
-#define PN532_H_
+#ifndef PN532_HPP_
+#define PN532_HPP_
 
 // #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_PN532.h>
-#include "main.h"
+#include "main.hpp"
 
 #define PN532_IRQ   (2)
 #define PN532_RESET (4)  // Not connected by default on the NFC Shield

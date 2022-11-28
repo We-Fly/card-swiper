@@ -1,5 +1,5 @@
-#ifndef NETCOM_H_
-#define NETCOM_H_
+#ifndef NETCOM_HPP_
+#define NETCOM_HPP_
 
 #include <WiFi.h>
 #include <HTTPClient.h>

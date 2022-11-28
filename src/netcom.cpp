@@ -1,6 +1,6 @@
-#include "netcom.h"
+#include "netcom.hpp"
 #include "HTTPClient.h"
-#include "NetConfig.h"
+#include "NetConfig.hpp"
 
 void initWiFi()
 {

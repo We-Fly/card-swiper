@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.hpp"
 
 int freq = 2000;//设置频率
 int channel = 0;//通道号，取值0 ~ 15

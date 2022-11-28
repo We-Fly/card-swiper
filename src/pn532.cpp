@@ -1,5 +1,5 @@
-#include "pn532.h"
-#include "netcom.h"
+#include "pn532.hpp"
+#include "netcom.hpp"
 
 // Uncomment just _one_ line below depending on how your breakout or shield
 // is connected to the Arduino:
