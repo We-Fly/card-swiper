@@ -1,3 +1,8 @@
+/*
+    Rename this file to NetConfig.hpp
+    Set the entries in this file to yours
+*/
+
 #ifndef NETCONFIG_HPP_
 #define NETCONFIG_HPP_
 
@@ -8,7 +13,7 @@ const char *ssid = "YOUR_WIFI_SSID";
 const char *password = "YOUR_WIFI_PASSWORD";
 
 // Your Domain name with URL path or IP address with path
-String serverName = "http://192.168.10.106:8001/test";
+String serverName = "http://Your_Domain_name/PATH";
 
 
 // Set true/false to enable/disable static IP settings
@@ -16,9 +21,9 @@ String serverName = "http://192.168.10.106:8001/test";
 
 #if USE_STATIC_IP
 // Set your Static IP address
-IPAddress local_IP(192, 168, 10, 100);
+IPAddress local_IP(192, 168, X, XX);
 // Set your Gateway IP address
-IPAddress gateway(192, 168, 10, 1);
+IPAddress gateway(192, 168, X, XX);
 
 IPAddress subnet(255, 255, 255, 0);
 IPAddress primaryDNS(8, 8, 8, 8);   // optional
